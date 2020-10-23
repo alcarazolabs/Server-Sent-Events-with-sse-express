@@ -1,6 +1,7 @@
 var express = require('express')
 const bodyParser = require('body-parser')
 var app = express()
+//npm install --save sse-express@next
 let sseExpress = require('sse-express')
 
 app.use(express.static(__dirname))
