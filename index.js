@@ -29,7 +29,7 @@ app.post('/message', (req, res, next) => {
     res.send({msg: "ok"})
     //guardar msg en la bd
 	app.emit('message', {
-		title: 'new message!',
+		title: 'new message!.',
 		message,
 		timestamp: new Date()
 	});
