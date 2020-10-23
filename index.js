@@ -16,9 +16,9 @@ app.get('/updates', sseExpress(), (req, res) => {
           welcomeMsg: 'Hello world!'
         }
     });*/
-    app.on('mensaje', data => {
+    app.on('message', data => {
 		res.sse({
-            event: 'mensaje',
+            event: 'message',
             data: data
         });
 	});
@@ -28,8 +28,8 @@ app.post('/message', (req, res, next) => {
     const message = req.body.message;
     res.send({msg: "ok"})
     //guardar msg en la bd
-	app.emit('mensaje', {
-		title: 'Nuevo Mensaje!',
+	app.emit('message', {
+		title: 'new message!',
 		message,
 		timestamp: new Date()
 	});
