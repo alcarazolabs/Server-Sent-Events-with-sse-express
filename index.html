@@ -1,0 +1,20 @@
+<html>
+    <head>Prueba sse-express</head>
+
+<body>
+    <script type="text/javascript">
+        let eventSource = new EventSource('http://localhost:3000/updates');
+
+        eventSource.addEventListener('mensaje', (e) => {
+            var data = JSON.parse(e.data)
+            console.log(data)
+        });
+
+        // listens to all the messages. The only way to catch unnamed events (with no `event` name set)
+        eventSource.onmessage = message => {
+        console.log(message);
+        };
+    </script>
+</body>
+
+</html>
